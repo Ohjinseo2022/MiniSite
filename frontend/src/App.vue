@@ -1,9 +1,16 @@
 <template>
-  <div>
+  <div class="appview">
+    <Header />
+
     <router-view />
   </div>
 </template>
-
+<script>
+import Header from './components/layout/header.vue'
+export default {
+  components: { Header }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -12,17 +19,12 @@
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  font-size: 16px;
+  background: inherit;
 }
 </style>
