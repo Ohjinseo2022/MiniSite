@@ -18,7 +18,10 @@
     <br />
     <div class="searchBox">
       <div>로고!</div>
-      <div :class="{ search: true, searchBorder: focus, searchfocus: !focus }">
+      <div
+        class="search"
+        :style="{ borderColor: focus ? '#ec65ff' : '#7f00cb' }"
+      >
         <input
           class="searchbar"
           v-model="search"
@@ -47,7 +50,15 @@
         <li>3</li>
         <li>4</li>
       </ul>
+      <button @click="categoryBoxOpen()">
+        <font-awesome-icon icon="fa-solid fa-bars" />
+      </button>
     </div>
+    <div
+      class="menuBox"
+      :style="{ display: display ? 'block' : 'none' }"
+      @mouseout="categoryBoxOpen()"
+    ></div>
   </div>
 </template>
 <script>
@@ -57,7 +68,8 @@ export default {
     return {
       sampleData: '',
       focus: true,
-      search: ''
+      search: '',
+      display: false
     }
   },
   setup() {},
@@ -67,6 +79,9 @@ export default {
   methods: {
     choutline() {
       this.focus = !this.focus
+    },
+    categoryBoxOpen() {
+      this.display = !this.display
     }
   }
 }
@@ -100,10 +115,12 @@ nav > ul {
 .search {
   height: 35px;
   border-radius: 5px;
+  border: 3px solid;
+  border-color: #ec65ff;
 }
-.searchBorder {
+/* .searchBorder {
   border: 3px solid #ec65ff;
-}
+} */
 .searchfocus {
   border: 3px solid #7f00cb;
 }
@@ -127,10 +144,21 @@ button {
   height: 50px;
   background: #8f49cb;
 }
+.categoryBar > div {
+  width: 10%;
+}
 .menu {
   display: flex;
   list-style: none;
   justify-content: space-around;
-  width: 90%;
+  width: 85%;
+}
+.menuBox {
+  width: 100%;
+  height: 300px;
+  animation-duration: 2s;
+  opacity: 0.7;
+  background-color: #ec65ff;
+  position: absolute;
 }
 </style>
