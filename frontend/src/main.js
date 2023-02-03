@@ -13,16 +13,17 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
   faMagnifyingGlass,
   faHouse,
-  faBars
+  faBars,
+  faUser,
+  faLock
 } from '@fortawesome/free-solid-svg-icons'
 
 // <font-awesome-icon icon="fa-sharp fa-solid fa-magnifying-glass" />
 /* add icons to the library */
-library.add(faMagnifyingGlass, faHouse, faBars)
+library.add(faMagnifyingGlass, faHouse, faBars, faUser, faLock)
 
 createApp(App)
   .component('font-awesome-icon', FontAwesomeIcon)
-
   .use(store)
   .use(router)
   .mount('#app')
