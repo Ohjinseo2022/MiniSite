@@ -87,9 +87,8 @@ export default {
   height: 300px;
   box-shadow: 3px 3px 3px 3px #8f49cb;
 }
-.innerBox {
-  position: absolute;
-  left: 37%;
+.inputBox {
+  margin: 0 auto;
 }
 .box {
   text-align: center;
@@ -130,13 +129,15 @@ input {
   font-size: 20px;
   margin-left: 10px;
 }
+.innerBox {
+  margin: 15px 57px;
+}
 .inputBox {
   border: 1px solid #7f00cb;
   height: 40px;
   width: 250px;
   position: relative;
   display: flex;
-
   justify-content: center;
   align-items: center;
   padding-left: 16px;
