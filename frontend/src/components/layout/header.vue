@@ -7,7 +7,7 @@
         <li>오늘날짜</li>
       </ul>
       <ul>
-        <li>로그인&nbsp;|&nbsp;</li>
+        <li><router-link to='/login'>로그인&nbsp;</router-link>|&nbsp;</li>
 
         <li>회원가입&nbsp;|&nbsp;</li>
 

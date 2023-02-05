@@ -25,7 +25,7 @@
         /><span :class="{ clear: clearpwd, warning: true }">*</span>
       </div>
       <div>
-        <button class="loginbtn">
+        <button class="loginbtn" @click="loginAction()">
           로&nbsp;&nbsp;&nbsp;&nbsp;그&nbsp;&nbsp;&nbsp;&nbsp;인
         </button>
       </div>
@@ -69,6 +69,13 @@ export default {
     },
     onSubmit() {
       console.log(this.id + this.pwd)
+    },
+    loginAction() {
+      if (this.ckearid === 1 && this.clearpwd === 1) {
+        console.log('로그인 로직 작동')
+      } else {
+        window.alert('필수정보를 입력주세요')
+      }
     }
   }
 }
@@ -82,6 +89,7 @@ export default {
 }
 .innerBox {
   position: absolute;
+  left: 37%;
 }
 .box {
   text-align: center;
